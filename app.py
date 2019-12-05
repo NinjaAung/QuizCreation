@@ -23,10 +23,10 @@ def multiple_choice_format(*argv):
     print()
     return input("Please enter a character a-e: ")
 
-def true_or_false(number, question, answer):
+def question_format(number, question, answer):
     print(f'\n{number}. {question}\n')
-    if answer.isdigit():
-        if input("Please enter a character T or F: ") == answer:
+    if not answer.isdigit():
+        if input("Please enter a character T or F: ") == answer.lower() or answer:
             return 1
         else:
             return 0
@@ -52,19 +52,19 @@ def question2_multiple():
         return 0  
 
 def question3_tf():
-    true_or_false("3", "Is 7 a odd number?", "T")
+    return question_format("3", "Is 7 a odd number?", "T")
     
 def question4_tf():
-    return
+    return question_format("4", "Is ((2^2)^3) = 2^5", "T")
 
 def question5_int():
-    return
+    return question_format("5", "There are 49 dogs signed up to compete in the dog show.\nThere are 36 more small dogs than large dogs signed up to compete.\nHow many small dogs are signed up to compete?", "42")
 def question6_int():
-    return
+    return question_format("6", "A man buys a horse for $60.\n He sells the horse for $70. He then buys the horse back for $80.\n And he sells the horse again for $90. In the end, how much money did the man make or lose? Or did he break even?", "20")
 
 
 
 def quiz_complete(*argv):
     print(argv)
 
-quiz_complete(question1_multiple(), question2_multiple())
+quiz_complete(question1_multiple(), question2_multiple(), question3_tf(), question4_tf(), question5_int(), question6_int())
