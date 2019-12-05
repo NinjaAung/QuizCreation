@@ -16,16 +16,27 @@ os.system('clear')
 print(50 * "_" + Fore.RED + banner + Fore.RESET + 50 * "_")
 
 
-
-
-
 def multiple_choice_format(*argv):
     alphabet = list(string.ascii_lowercase)
     for (letter, option) in zip(alphabet, argv):
         print(f'{letter}. {option}')
+    return input("Please enter a character a-e: ")
+
+def question1():
+    print("A rectangle has an area of 15 square centimeters.\nWhich of the following could be the rectangle's length and width?\n")
+    if multiple_choice_format("1 and 15","2 and 15","15 and 15","7.4 and 3","6.99 and 4") == "b":
+        print("\ngot em")
+    else:
+        print("\nno no")
 
 
-multiple_choice_format("love", "hate")
+question1()
+
+
+def question2():
+    print("")
+
+
 
 
     
