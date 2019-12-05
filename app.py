@@ -20,31 +20,51 @@ def multiple_choice_format(*argv):
     alphabet = list(string.ascii_lowercase)
     for (letter, option) in zip(alphabet, argv):
         print(f'{letter}. {option}')
+    print()
     return input("Please enter a character a-e: ")
 
-def question1():
-    print("A rectangle has an area of 15 square centimeters.\nWhich of the following could be the rectangle's length and width?\n")
-    if multiple_choice_format("1 and 15","2 and 15","15 and 15","7.4 and 3","6.99 and 4") == "b":
-        print("\ngot em")
+def true_or_false(number, question, answer):
+    print(f'\n{number}. {question}\n')
+    if answer.isdigit():
+        if input("Please enter a character T or F: ") == answer:
+            return 1
+        else:
+            return 0
     else:
-        print("\nno no")
+        if input("Please Enter a numeral: ") == answer:
+            return 1
+        else:
+            return 0
 
 
-question1()
+def question1_multiple():
+    print("\n1. A rectangle has an area of 15 square centimeters.\nWhich of the following could be the rectangle's length and width?\n")
+    if multiple_choice_format("1 and 15","2 and 15","15 and 15","7.4 and 3","6.99 and 4") == "b":
+        return 1
+    else:
+        return 0
 
+def question2_multiple():
+    print("\n2. Which of the following are factor pairs for 49?\n")
+    if multiple_choice_format("3 and 13", "1 and 49", "7 and 8", "4 and 11", "2 and 23") == "b":
+        return 1
+    else:
+        return 0  
 
-def question2():
-    print("")
-
-
-
-
+def question3_tf():
+    true_or_false("3", "Is 7 a odd number?", "T")
     
-def math_int():
+def question4_tf():
     return
 
-def true_or_false():
+def question5_int():
     return
+def question6_int():
+    return
+
+
 
 def quiz_complete(*argv):
-    return
+    print(argv)
+
+quiz_complete(question1_multiple(), question2_multiple())
