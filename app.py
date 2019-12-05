@@ -67,17 +67,27 @@ def question6_int():
 
 
 def quiz_complete(*argv):
-    print(argv)
     if sum(argv) == 6:
         print("\n\nwow you are a the supreme math wiz. You got " + str(sum(argv)) + " correct!")
 
     elif sum(argv) >= 5:
         print("\n\nBetter luck next time. You got " + str(sum(argv)) + " correct!")
 
-        index = argv.index(0)
-        print(index)
+        
 
     elif sum(argv) >= 2:
         print("\n\nDon't worry you got this, keep practising. You got " + str(sum(argv)) + " correct!")
 
+    num = 1
+    q_wrong = 6 - sum(argv)
+    listx = list(argv)
+    while q_wrong > 0:
+        wrong = int(listx.index(0))
+        print(f'{wrong + num}')
+        listx.pop(wrong)
+        num += 1
+        q_wrong -= 1
+        
+
 quiz_complete(question1_multiple(), question2_multiple(), question3_tf(), question4_tf(), question5_int(), question6_int())
+
