@@ -30,11 +30,13 @@ def question_format(number, question, answer):
     os.system('clear')
     print(f'\n{number}. {question}\n')
     if not answer.isdigit():
-        if input("Please enter a character T or F: ") == answer.lower() or answer:
+
+        if input("Please enter a character T or F: ") == answer.lower():
             return 1
         else:
             return 0
     else:
+
         if input("Please Enter a numeral: ") == answer:
             return 1
         else:
@@ -65,10 +67,16 @@ def question6_int():
 
 
 def quiz_complete(*argv):
-    if sum(argv) >= 5:
+    print(argv)
+    if sum(argv) == 6:
         print("\n\nwow you are a the supreme math wiz. You got " + str(sum(argv)) + " correct!")
-    elif sum(argv) >= 3:
+
+    elif sum(argv) >= 5:
         print("\n\nBetter luck next time. You got " + str(sum(argv)) + " correct!")
+
+        index = argv.index(0)
+        print(index)
+
     elif sum(argv) >= 2:
         print("\n\nDon't worry you got this, keep practising. You got " + str(sum(argv)) + " correct!")
 
